@@ -159,7 +159,7 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 			loaded: 0,
 			done: false,
 		};
-		return fetch(file).then(function (response) {
+		return fetch(file, {headers: {'ngrok-skip-browser-warning': 1}}).then(function (response) {
 			if (!response.ok) {
 				return Promise.reject(new Error(`Failed loading file '${file}'`));
 			}
@@ -669,7 +669,7 @@ const Engine = (function () {
 	Engine.load = function (basePath, size) {
 		if (loadPromise == null) {
 			loadPath = basePath;
-			loadPromise = preloader.loadPromise(`https://cn-jn-lt-plustmp1.natfrp.cloud:21378/GridShape.wasm`, size, true);
+			loadPromise = preloader.loadPromise(`https://a322-120-46-178-128.ngrok-free.app/GridShape.wasm`, size, true);
 			requestAnimationFrame(preloader.animateProgress);
 		}
 		return loadPromise;
@@ -709,7 +709,7 @@ const Engine = (function () {
 						initPromise = Promise.reject(new Error('A base path must be provided when calling `init` and the engine is not loaded.'));
 						return initPromise;
 					}
-					Engine.load(basePath, this.config.fileSizes[`https://cn-jn-lt-plustmp1.natfrp.cloud:21378/GridShape.wasm`]);
+					Engine.load(basePath, this.config.fileSizes[`https://a322-120-46-178-128.ngrok-free.app/GridShape.wasm`]);
 				}
 				const me = this;
 				function doInit(promise) {
