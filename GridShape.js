@@ -159,7 +159,7 @@ const Preloader = /** @constructor */ function () { // eslint-disable-line no-un
 			loaded: 0,
 			done: false,
 		};
-		return fetch(file, {headers: {'ngrok-skip-browser-warning': 1}}).then(function (response) {
+		return fetch(file, {headers: {'ngrok-skip-browser-warning': 1, 'Access-Control-Allow-Origin': *}}).then(function (response) {
 			if (!response.ok) {
 				return Promise.reject(new Error(`Failed loading file '${file}'`));
 			}
