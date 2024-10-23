@@ -669,7 +669,7 @@ const Engine = (function () {
 	Engine.load = function (basePath, size) {
 		if (loadPromise == null) {
 			loadPath = basePath;
-			loadPromise = preloader.loadPromise(`http://120.46.178.128:81/GridShape.wasm`, size, true);
+			loadPromise = preloader.loadPromise(`cn-jn-lt-plustmp1.natfrp.cloud:21378/GridShape.wasm`, size, true);
 			requestAnimationFrame(preloader.animateProgress);
 		}
 		return loadPromise;
@@ -709,7 +709,7 @@ const Engine = (function () {
 						initPromise = Promise.reject(new Error('A base path must be provided when calling `init` and the engine is not loaded.'));
 						return initPromise;
 					}
-					Engine.load(basePath, this.config.fileSizes[`http://120.46.178.128:81/GridShape.wasm`]);
+					Engine.load(basePath, this.config.fileSizes[`cn-jn-lt-plustmp1.natfrp.cloud:21378/GridShape.wasm`]);
 				}
 				const me = this;
 				function doInit(promise) {
